@@ -1,0 +1,174 @@
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+body {
+    background: linear-gradient(#611684, #21042e);
+    min-height: 100vh
+}
+
+#limite{
+    background-color: white;
+    max-width: 850px; 
+    width: 90%;
+    height: auto;
+    min-height: 580px;
+    margin: 0 auto; 
+    margin-top: 40px;
+    overflow: hidden;
+    box-shadow: 0px 0px 70px rgb(0, 0, 0);
+}
+
+h1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding-top: 32px;
+    font-size: 40px;
+}
+
+#cabecalho{
+    background-color: #611684;
+    height: 120px;
+    margin-top: 0px;
+}
+
+#container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+h2{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+#adicionar{
+    border-radius: 90px;
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    background-color: #611684;
+    color: white;
+    transition: .3s all ease-in-out;
+}
+
+#adicionar:hover {
+    height: 43px;
+    width: 43px;
+}
+
+.remover{
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #611684;
+}
+
+.remover:hover {
+    color: #000000;
+}
+
+
+#saldo{
+    font-size: 25px;
+    margin-top: 1px;
+    margin-bottom: 20px;
+}
+
+input{
+    border-radius: 5px;
+    height: 40px;
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    border-color:  #611684;
+    margin: 0%;
+
+}
+
+p{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+
+#historico {
+    max-width: 400px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#formularios{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 57px;
+}
+
+#titulo {
+    
+    border-right: none; 
+    border-radius: 5px 0 0 5px;
+}
+
+#valor{
+    
+    border-left: 0; 
+    border-radius: 0 5px 5px 0; 
+}
+
+#saldoContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin-top: 20px;
+}
+
+#historico div {
+    background-color: #ffffff;
+    padding-top: 10px;
+    margin-top: 10px;
+    border-bottom: 2px solid #611684;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    position: relative;
+}
+
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    input{
+        width: 100%;
+    }
+
+    #adicionar{
+        /* margin-right: 3%; */
+        height: 40px;
+        width: 40px;
+    }
+
+    #cabecalho {
+        height: 80px;
+    }
+    
+    #historico div{
+        width: 85%;
+        
+    }
+}
+
