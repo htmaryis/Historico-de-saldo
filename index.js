@@ -22,6 +22,21 @@ valorElement.addEventListener("keypress", function(event) {
     }
 });
 
+const botaoRemover = document.createElement("button");
+botaoRemover.textContent = "✖";
+botaoRemover.classList.add("remover")
+
+botaoRemover.addEventListener("click", function() {
+    remover(newTask, valor);
+});
+
+function remover(newTask, valor) {
+    saldoAtual -= valor;
+    saldoElement.textContent = saldoAtual.toFixed(2); // Atualiza o saldo 
+    newTask.remove();
+        
+    salvarDados(); // Atualiza o armazenamento local
+}
 
 function atualizar() {
     const valor = parseFloat(valorElement.value) || 0;
@@ -44,25 +59,6 @@ function atualizar() {
         <p>R$ ${valor.toFixed(2)}</p>`;
 
     // Botão de remover
-
-    const botaoRemover = document.createElement("button");
-    botaoRemover.textContent = "✖";
-    botaoRemover.classList.add("remover")
-
-    botaoRemover.addEventListener("click", function() {
-        remover(newTask, valor);
-    });
-
-    function remover(newTask, valor) {
-        saldoAtual -= valor;
-        saldoElement.textContent = saldoAtual.toFixed(2); // Atualiza o saldo 
-        newTask.remove();
-        
-        salvarDados(); // Atualiza o armazenamento local
-    }
-
-
-    
     
     newTask.appendChild(botaoRemover);
     historico.appendChild(newTask);
@@ -102,6 +98,15 @@ function carregarDados() {
         historicoArray.forEach(itemHTML => {
             const newTask = document.createElement("div");
             newTask.innerHTML = itemHTML;
+            
+            const botaoRemover = newTask.querySelector("button.remover");
+            const valorTexto = newTask.querySelector("p:nth-child(2)").textContent;
+            const valor = parseFloat(valorTexto.replace("R$ ", "").replace(",", "."));
+            
+            botaoRemover.addEventListener("click", function () {
+                remover(newTask, valor);
+            });
+
             historico.appendChild(newTask);
         });
     }
